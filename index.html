@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Propuesta creativa premium de branding, marketing digital y redes sociales para IAM Fitness.">
 <title>IAM Fitness · Propuesta Creativa Premium</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@200;300;400&amp;display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -333,14 +334,14 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
 <body>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="goTo('s1',this)">Portada</button>
-  <button class="nav-btn" onclick="goTo('s2',this)">Wellness</button>
-  <button class="nav-btn" onclick="goTo('s3',this)">Color</button>
-  <button class="nav-btn" onclick="goTo('s4',this)">Redes</button>
-  <button class="nav-btn" onclick="goTo('s5',this)">Campaña</button>
-  <button class="nav-btn" onclick="goTo('s6',this)">Resultados</button>
-  <button class="nav-btn premium" onclick="goTo('s7',this)">Plan Full</button>
-  <button class="nav-btn" onclick="goTo('s8',this)">Plan Standard</button>
+  <button type="button" class="nav-btn active" onclick="goTo('s1',this)">Portada</button>
+  <button type="button" class="nav-btn" onclick="goTo('s2',this)">Wellness</button>
+  <button type="button" class="nav-btn" onclick="goTo('s3',this)">Color</button>
+  <button type="button" class="nav-btn" onclick="goTo('s4',this)">Redes</button>
+  <button type="button" class="nav-btn" onclick="goTo('s5',this)">Campaña</button>
+  <button type="button" class="nav-btn" onclick="goTo('s6',this)">Resultados</button>
+  <button type="button" class="nav-btn premium" onclick="goTo('s7',this)">Plan Full</button>
+  <button type="button" class="nav-btn" onclick="goTo('s8',this)">Plan Standard</button>
   <span class="slide-counter">IAM FITNESS · 2025</span>
 </nav>
 
@@ -489,7 +490,6 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
       </div>
     </div>
   </div>
-  </div>
 </section>
 
 <!-- ══════ SLIDE 4: REDES ══════ -->
@@ -498,8 +498,8 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
     <div class="label label-pink">Propuesta Visual</div>
     <div class="section-title">REDES<br>SOCIALES.</div>
     <div class="s4-tabs">
-      <button class="s4-tab active" onclick="switchTab('stories',this)">Stories</button>
-      <button class="s4-tab" onclick="switchTab('posts',this)">Posts</button>
+      <button type="button" class="s4-tab active" onclick="switchTab('stories',this)">Stories</button>
+      <button type="button" class="s4-tab" onclick="switchTab('posts',this)">Posts</button>
     </div>
 
     <div id="stories" class="tab-content show">
@@ -612,8 +612,6 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
       </div>
     </div>
   </div>
-  </div>
-  </div>
 </section>
 
 <!-- ══════ SLIDE 5: CAMPAÑA ══════ -->
@@ -678,7 +676,6 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
       </div>
     </div>
   </div>
-  </div>
 </section>
 
 <!-- ══════ SLIDE 6: RESULTADOS ══════ -->
@@ -734,7 +731,6 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
       <div class="gb-row"><span class="gb-name">Consultas</span><div class="gb-bar-bg"><div class="gb-bar" style="--w:45%;background:var(--pink)"></div></div><span class="gb-val">Media</span></div>
       <div class="gb-row"><span class="gb-name">Retención</span><div class="gb-bar-bg"><div class="gb-bar" style="--w:70%;background:var(--yellow)"></div></div><span class="gb-val">Alta</span></div>
     </div>
-  </div>
   </div>
 </section>
 
@@ -873,14 +869,18 @@ body{background:var(--black);color:#fff;font-family:'Inter',sans-serif;overflow-
 
 <script>
 function goTo(id,btn){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  const target = document.getElementById(id);
+  if(!target) return;
+  target.scrollIntoView({behavior:'smooth'});
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
 }
 function switchTab(tab,btn){
+  const target = document.getElementById(tab);
+  if(!target) return;
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('show'));
   document.querySelectorAll('.s4-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById(tab).classList.add('show');
+  target.classList.add('show');
   if(btn) btn.classList.add('active');
 }
 // Active nav on scroll
