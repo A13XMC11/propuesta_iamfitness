@@ -1,0 +1,13 @@
+{
+  "name": "propuesta-iamfitness",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Presentacion estatica para la propuesta creativa de IAM Fitness.",
+  "scripts": {
+    "dev": "serve .",
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}
